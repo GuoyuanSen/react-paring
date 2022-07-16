@@ -14,7 +14,7 @@ const defaultMenus = [
   },
   {
     path: '/vehicle',
-    name: 'Vehicles',//车辆数据
+    name: 'Vehicle',//车辆数据
     component: './Vehicle'
   },
   {
@@ -84,13 +84,13 @@ const BasicLayout = (props) => {
         pathname: pathname,
       }}
       menuItemRender={(menuItemProps, defaultDom) => {
-        return (<a 
+        return (<div 
           onClick={() => {
             setPathname(menuItemProps.path || '/monitoring');
           }}
         >
           <Link to={menuItemProps.path}>{defaultDom}</Link>
-        </a>) ;
+        </div>) ;
       }}
 
     >

@@ -35,50 +35,56 @@ const parkingLotList = [
     time: '2022-02-10 10:20:30',
   },
 ];
-const ChanneInf = (props) => {
+export default React.memo(function ChanneList(props) {
   const { height } = props;
   return (
     <div className={styles.parklist}>
-       <Card
-                bodyStyle={{padding: '12px'}}
-                headStyle={{borderBottom: '1px solid #7aecff',color:'#fff',fontSize:"16px"}}
-                title="呼叫列表"
-                style={{
-                  background: '#1a2855',
-                  border: '1px solid #7aecff',
-                  color: '#fff',
-                }}
-              >
-      <div className={styles.plist} style={{ height: `${height}` }}>
+      <Card
+        bodyStyle={{ padding: '12px' }}
+        headStyle={{ borderBottom: '1px solid #7aecff', color: '#fff', fontSize: '16px' }}
+        title="呼叫列表"
+        style={{
+          background: '#1a2855',
+          border: '1px solid #7aecff',
+          color: '#fff',
+          lineHeight: '20px'
+        }}
+      >
+        <div className={styles.plist} style={{ height: `${height}` }}>
           {parkingLotList.map((item, index) => (
-              <Card
-                headStyle={{ borderBottom: '1px solid #7aecff', color: '#fff', fontSize: '16px' }}
-                size="small"
-                title={item.name}
-                extra={
-                  <Button size="small">主动呼叫</Button>
-                }
-                style={{
-                  background: '#1a2855',
-                  border: '1px solid #7aecff',
-                  color: '#fff',
-                  marginBottom: '20px',
-                }}
-              >
-                <div className={styles.cardMains}>
-                    <img className={styles.imgSRC} src={item.imgSRC}></img>
-                    <div>
-                      <span className={styles.cheCar}>{item.titlemin}</span>
-                      <p className={styles.times}>{item.time}</p>
-                      <p> <Button size="small" icon={<PhoneOutlined />} style={{marginRight:'6px'}}>挂断</Button><Button size="small" type="primary" icon={<PhoneOutlined />}>接听</Button></p>
-                    </div>
+            <Card
+              key={index}
+              headStyle={{ borderBottom: '1px solid #7aecff', color: '#fff', fontSize: '16px' }}
+              size="small"
+              title={item.name}
+              extra={<Button size="small">主动呼叫</Button>}
+              style={{
+                background: '#1a2855',
+                border: '1px solid #7aecff',
+                color: '#fff',
+                marginBottom: '20px',
+              }}
+            >
+              <div className={styles.cardMains}>
+                <img className={styles.imgSRC} src={item.imgSRC}></img>
+                <div>
+                  <span className={styles.cheCar}>{item.titlemin}</span>
+                  <p className={styles.times}>{item.time}</p>
+                  <div>
+                    {' '}
+                    <Button size="small" icon={<PhoneOutlined />} style={{ marginRight: '6px' }}>
+                      挂断
+                    </Button>
+                    <Button size="small" type="primary" icon={<PhoneOutlined />}>
+                      接听
+                    </Button>
+                  </div>
                 </div>
-              </Card>
+              </div>
+            </Card>
           ))}
-      </div>
+        </div>
       </Card>
     </div>
   );
-};
-
-export default ChanneInf;
+});

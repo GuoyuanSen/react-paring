@@ -15,7 +15,6 @@ export default [
     routes: [
       { 
         path: '/monitoring',
-        icon: 'icon-chechangyunying',
         name: 'Monitoring',//监控中心
         component: './Monitoring'
       },

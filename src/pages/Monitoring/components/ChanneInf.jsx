@@ -97,55 +97,56 @@ const parkingLotList = [
     time: '2022-02-10 10:20:30',
   },
 ];
-const ChanneInf = (props) => {
+export default React.memo(function ChanneInf(props) {
   const { height } = props;
   return (
     <div className={styles.parklist}>
-       <Card
-                headStyle={{borderBottom: '1px solid #7aecff',color:'#fff',fontSize:"16px"}}
-                bodyStyle={{padding: '12px'}}
-               title="通道滞留信息"  style={{
-                 background: '#1a2855',
-                 border: '1px solid #7aecff',
-                 color: '#fff'
-               }}>
-      <div className={styles.plist} style={{ height: `${height}` }}>
-        <Row gutter={16}>
-          {parkingLotList.map((item, index) => (
-            <Col span={8} key={index}>
-              <Card
-                headStyle={{ borderBottom: '1px solid #7aecff', color: '#fff', fontSize: '16px' }}
-                size="small"
-                title={item.name}
-                extra={
-                  <a className={item.type == 1 ? styles.onOrIn : styles.Out}>
-                    {item.type == 1 ? '入' : '出'}
-                  </a>
-                }
-                style={{
-                  background: '#1a2855',
-                  border: '1px solid #7aecff',
-                  color: '#fff',
-                  marginBottom: '20px',
-                }}
-              >
-                <p className={styles.titleMin}>{item.titlemin}</p>
-                <div className={styles.cardMains}>
+      <Card
+        headStyle={{ borderBottom: '1px solid #7aecff', color: '#fff', fontSize: '16px' }}
+        bodyStyle={{ padding: '12px' }}
+        title="通道滞留信息"
+        style={{
+          background: '#1a2855',
+          border: '1px solid #7aecff',
+          color: '#fff',
+          lineHeight:'20px'
+        }}
+      >
+        <div className={styles.plist} style={{ height: `${height}` }}>
+          <Row gutter={16}>
+            {parkingLotList.map((item, index) => (
+              <Col span={8} key={index}>
+                <Card
+                  headStyle={{ borderBottom: '1px solid #7aecff', color: '#fff', fontSize: '16px' }}
+                  size="small"
+                  title={item.name}
+                  extra={
+                    <a className={item.type == 1 ? styles.onOrIn : styles.Out}>
+                      {item.type == 1 ? '入' : '出'}
+                    </a>
+                  }
+                  style={{
+                    background: '#1a2855',
+                    border: '1px solid #7aecff',
+                    color: '#fff',
+                    marginBottom: '20px',
+                  }}
+                >
+                  <p className={styles.titleMin}>{item.titlemin}</p>
+                  <div className={styles.cardMains}>
                     <img className={styles.imgSRC} src={item.imgSRC}></img>
                     <div>
                       <span className={styles.cheCar}>{item.cheCar}</span>
                       <span className={styles.xiaochron}>{item.xiaochron}</span>
                       <p className={styles.times}>{item.time}</p>
                     </div>
-                </div>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </div>
+                  </div>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </div>
       </Card>
     </div>
   );
-};
-
-export default ChanneInf;
+});

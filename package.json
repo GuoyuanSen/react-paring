@@ -54,6 +54,7 @@
     "@umijs/route-utils": "^1.0.33",
     "antd": "^4.15.0",
     "classnames": "^2.3.1",
+    "draggable-antd-modal": "^0.0.3",
     "echarts": "^5.3.1",
     "echarts-liquidfill": "^3.1.0",
     "js-export-excel": "^1.1.4",
@@ -61,15 +62,17 @@
     "lodash": "^4.17.11",
     "moment": "^2.25.3",
     "omit.js": "^2.0.2",
+    "prop-types": "^15.8.1",
     "react": "^16.14.0",
     "react-amap": "^1.2.8",
     "react-cookies": "^0.1.1",
     "react-dev-inspector": "^1.1.1",
     "react-dom": "^17.0.0",
     "react-helmet-async": "^1.0.4",
-    "react-player": "^2.10.1",
     "umi": "^3.4.1",
-    "umi-request": "^1.0.8"
+    "umi-request": "^1.0.8",
+    "video.js": "^7.19.2",
+    "videojs-contrib-hls": "^5.15.0"
   },
   "devDependencies": {
     "@ant-design/pro-cli": "^1.0.28",
