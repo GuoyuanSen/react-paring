@@ -70,8 +70,8 @@ export default React.memo(() => {
               <Col span={8}>
                 <MonitorVideo height={'calc(100vh - 228px)'} />
               </Col>
-              <Col span={11}>
-               <ParkingMessage/>
+              <Col span={11} style={{ display: 'flex', flex: '1' }}>
+                <ParkingMessage />
               </Col>
             </>
           )}

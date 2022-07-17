@@ -6,25 +6,25 @@
 
 .onOrIn,
 .Out {
-  background: #E7F9F3;
-  border-radius: 50%;
   padding: 2px 3px;
+  background: #e7f9f3;
+  border-radius: 50%;
 }
 
 .Out {
-  background: #ECF0FB;
+  background: #ecf0fb;
 }
 
 .titleMin {
-  font-size: 14px;
-  color: #FFAE5E;
   margin-bottom: 8px;
+  color: #ffae5e;
+  font-size: 14px;
 }
 
 .cardMains {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
 
   .imgSRC {
     width: 150px;
@@ -33,187 +33,208 @@
   }
 
   .cheCar {
-    font-size: 16px;
-    font-weight: bold;
     // line-height: 35px;
     color: #fff;
+    font-weight: bold;
+    font-size: 16px;
   }
 
   .xiaochron {
-    font-size: 12px;
-    background-color: #D1D1D1;
-    border-radius: 2px;
-    padding: 2px;
     margin-left: 3px;
+    padding: 2px;
+    font-size: 12px;
+    background-color: #d1d1d1;
+    border-radius: 2px;
   }
 
   .times {
-    font-size: 12px;
     margin-top: 8px;
-    color: #999999
+    color: #999999;
+    font-size: 12px;
   }
 }
 
 .imgCar {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 .switchIn {
   position: absolute;
   top: 0px;
   right: 0;
-  li{
+  li {
     min-width: 54px;
     height: 30px;
     line-height: 30px;
     text-align: center;
     background: #000;
-    opacity: 0.5;
     border-radius: 15px 0px 0px 15px;
+    opacity: 0.5;
   }
   li:last-child {
     margin-top: 10px;
   }
 }
-.parkingMessage{
-  .carType{
-    width: 56px;
-    display: flex;
-    justify-content: space-between;
-    margin-right:10px;
-    i{
-      font-style: initial;
-    }
-  }
-  .CarChange{
-    display: flex;
-    align-items: baseline;
-    i{
-      font-style: initial;
-      margin: 0 4px;
-      border-radius: 2px;
-      padding: 0 5px;
-      color: #fff;
-    }
-  }
-  .CarTitleChange{
-    margin-top: 20px;
-  }
-  .carTypes_1{
-    background: #95CFFF;
-  }
-  .carTypes_2{
-    background: #AAFF6B;
-  }
-  .carTypes_3{
-    background: #FFB400;
-  }
-  .carTypes_4{
-    background: #D1D1D1;
-  }
-}
-.buttonSelect{
-  :global(.ant-radio-button-wrapper){
-    color: #E1BF7D;
-    background: #1A2855;
-    border: 1px solid #E1BF7D;
-    height:26px;
-    line-height: 25px;
-    margin-top: -5px;
-  }
-  :global(.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)){
-    color: #6E4C2B;
-    background:url(https://image.scsonic.cn//applets/stageParking/pcImage/select_icon.png) no-repeat center center, linear-gradient(0deg, #E0BD7B 0%, #F0D8A8 100%)
-  }
-  :global(.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover){
-    background: linear-gradient(0deg, #E0BD7B 0%, #F0D8A8 100%);
-    color: #6E4C2B;
-  }
-}
-.recordIsOut{
-  position:absolute;
-  right:0;
-  top: 0;
-background: linear-gradient(119deg, #FD746C 0%, #FF9068 100%);
-border-radius: 0px 4px 0px 21px;
-padding: 12px;
-}
-.amountNumber{
-  border-top: 1px solid #ACACAC;
-  margin-right:10px;
-  margin-top: 14px;
-  .amountSum{
-    display: flex;
-    flex-direction: column;
-    line-height: 25px;
-    margin: 13px 0;
-  }
-  .amountNum{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    margin-left: -12px;
-    border-right: 1px solid #ACACAC;
-  }
-  .payMoneyPark{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    div:nth-child(1){
-      width: 60px;
-      height: 60px;
-      background: #D9EEFF;
-      border-radius: 12px;
-      text-align: center;
-      line-height: 60px;
-      margin: 12px 14px 12px 14px;
-      img{
-        width:31px;
-        height:31px;
-      }
-    }
-    div:nth-child(2){
-      display: flex;
-      flex-direction: column;
-      span{
-        font-size: 18px;
-        em{
-          color: #FD4C4C;
-          font-size: 24px;
-          font-weight: bold;
-          font-style:inherit;
-          margin-left: 8px;
+.parkingMessage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  .parkingMessageWrapper {
+    :global {
+      .ant-tabs-content-holder {
+        display: flex;
+        flex: 1;
+        .ant-tabs-content {
+          display: flex;
+          flex: 1;
+        }
+        .ant-tabs-tabpane {
+          display: flex;
+          flex: 1;
         }
       }
-      span:last-child{
+    }
+  }
+  .carType {
+    display: flex;
+    justify-content: space-between;
+    width: 56px;
+    margin-right: 10px;
+    i {
+      font-style: initial;
+    }
+  }
+  .CarChange {
+    display: flex;
+    align-items: baseline;
+    i {
+      margin: 0 4px;
+      padding: 0 5px;
+      color: #fff;
+      font-style: initial;
+      border-radius: 2px;
+    }
+  }
+  .CarTitleChange {
+    margin-top: 20px;
+  }
+  .carTypes_1 {
+    background: #95cfff;
+  }
+  .carTypes_2 {
+    background: #aaff6b;
+  }
+  .carTypes_3 {
+    background: #ffb400;
+  }
+  .carTypes_4 {
+    background: #d1d1d1;
+  }
+}
+.buttonSelect {
+  :global(.ant-radio-button-wrapper) {
+    height: 26px;
+    margin-top: -5px;
+    color: #e1bf7d;
+    line-height: 25px;
+    background: #1a2855;
+    border: 1px solid #e1bf7d;
+  }
+  :global(.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)) {
+    color: #6e4c2b;
+    background: url(https://image.scsonic.cn//applets/stageParking/pcImage/select_icon.png)
+        no-repeat center center,
+      linear-gradient(0deg, #e0bd7b 0%, #f0d8a8 100%);
+  }
+  :global(.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover) {
+    color: #6e4c2b;
+    background: linear-gradient(0deg, #e0bd7b 0%, #f0d8a8 100%);
+  }
+}
+.recordIsOut {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  background: linear-gradient(119deg, #fd746c 0%, #ff9068 100%);
+  border-radius: 0px 4px 0px 21px;
+}
+.amountNumber {
+  margin-top: 14px;
+  margin-right: 10px;
+  border-top: 1px solid #acacac;
+  .amountSum {
+    display: flex;
+    flex-direction: column;
+    margin: 13px 0;
+    line-height: 25px;
+  }
+  .amountNum {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: -12px;
+    text-align: center;
+    border-right: 1px solid #acacac;
+  }
+  .payMoneyPark {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    div:nth-child(1) {
+      width: 60px;
+      height: 60px;
+      margin: 12px 14px 12px 14px;
+      line-height: 60px;
+      text-align: center;
+      background: #d9eeff;
+      border-radius: 12px;
+      img {
+        width: 31px;
+        height: 31px;
+      }
+    }
+    div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      span {
+        font-size: 18px;
+        em {
+          margin-left: 8px;
+          color: #fd4c4c;
+          font-weight: bold;
+          font-size: 24px;
+          font-style: inherit;
+        }
+      }
+      span:last-child {
+        color: #00f6ff;
         font-size: 14px;
-        color: #00F6FF
       }
     }
   }
 }
-:global(.ant-tabs-top > .ant-tabs-nav::before){
-  border-bottom: 1px solid #2B546B;
+:global(.ant-tabs-top > .ant-tabs-nav::before) {
+  border-bottom: 1px solid #2b546b;
 }
-:global(.ant-tabs-tab){
+:global(.ant-tabs-tab) {
   margin-left: 14px;
 }
-:global(.ant-tabs){
+:global(.ant-tabs) {
   color: #fff;
-  :global(.ant-tabs-content-holder){
+  :global(.ant-tabs-content-holder) {
     padding: 0 0 14px 14px;
   }
 }
-.reasonsClass{
-  display:flex;
+.reasonsClass {
+  display: flex;
   flex-direction: column;
-  :global(.ant-radio-wrapper){
+  :global(.ant-radio-wrapper) {
     color: #fff;
     line-height: 25px;
   }
-  :global(.ant-radio-wrapper-checked){
-    color: #008CFF
+  :global(.ant-radio-wrapper-checked) {
+    color: #008cff;
   }
 }
