@@ -1,7 +1,5 @@
 import { parse } from 'querystring';
 import JSEncrypt from 'jsencrypt';
-/* eslint no-useless-escape:0 import/prefer-default-export:0 */
-
 const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
 export const isUrl = (path) => reg.test(path);
 
@@ -9,6 +7,7 @@ export const getPageQuery = () => parse(window.location.href.split('?')[1]);
 
 export const getPageQueryIndex = (url, parameter) => {
   const index = url.lastIndexOf(parameter);
+  // eslint-disable-next-line no-param-reassign
   url = url.substring(index + 1, url.length);
   return url;
 };
@@ -87,4 +86,48 @@ export const getPageBtns = () => {
 
 
   return [];
+};
+
+const MIN = 60;
+const HOUR = 60 * 60;
+const DAY = 60 * 60 * 24;
+
+export const formatSeconds = (second) => {
+  if (second === undefined) {
+    return '';
+  }
+  let parts = 0;
+  let remaining = second;
+  let res = '';
+  const d = Math.floor(remaining / DAY);
+  if (d > 0) {
+    res += `${d} 天`;
+    remaining %= DAY;
+    parts += 1;
+  }
+
+  const h = Math.floor(remaining / HOUR);
+
+  if (h > 0) {
+    res += ` ${h} 小时`;
+    remaining %= HOUR;
+    parts += 1;
+    if (parts > 1) {
+      return res;
+    }
+  }
+
+  const m = Math.floor(remaining / MIN);
+
+  if (m > 0) {
+    res += ` ${m} 分`;
+    remaining %= MIN;
+    parts += 1;
+    if (parts > 1) {
+      return res;
+    }
+  }
+
+  res += ` ${remaining.toFixed(2)} 秒`;
+  return res.trim();
 };
